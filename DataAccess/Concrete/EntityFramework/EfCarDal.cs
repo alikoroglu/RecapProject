@@ -36,11 +36,7 @@ namespace DataAccess.Concrete.EntityFramework
             throw new NotImplementedException();
         }
 
-        public List<Car> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
         {
             using (NorthwindContext context = new NorthwindContext())
@@ -50,6 +46,11 @@ namespace DataAccess.Concrete.EntityFramework
                     : context.Set<Car>().Where(filter).ToList();
 
             }
+        }
+
+        public List<Car> GetAll()
+        {
+            throw new NotImplementedException();
         }
 
         public List<Car> GetById(int carId)

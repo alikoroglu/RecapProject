@@ -23,12 +23,28 @@ namespace ConsoleUI
 
             };
 
-            carManager.Add(newCar);
+            //carManager.Add(newCar);
 
 
+            Console.WriteLine("-----Brand ID --------");
+            foreach (var item in carManager.GetAllByBrandId(3))
+            {
+                Console.WriteLine(item.CarName);
+
+            }
+            Console.WriteLine("-----Color ID --------");
+            foreach (var item in carManager.GetAllByColorId(3))
+            {
+                Console.WriteLine(item.CarName);
+                
+
+            }
+
             
-            
-            
+
+
+
+
         }
     }
 }
