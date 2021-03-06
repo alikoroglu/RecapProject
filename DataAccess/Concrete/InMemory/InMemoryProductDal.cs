@@ -3,6 +3,7 @@ using Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemory
@@ -15,10 +16,10 @@ namespace DataAccess.Concrete.InMemory
         {
             _cars = new List<Car>
             {
-                new Car{CarId=1,BrandId=1,ColorId=1,ModelYear=2008,DailyPrice=150.0,Description="Kırmızı BMW temiz"},
-                new Car{CarId=2,BrandId=2,ColorId=1,ModelYear=2015,DailyPrice=200.0,Description="Kırmızı Mercedes temiz"},
-                new Car{CarId=3,BrandId=1,ColorId=2,ModelYear=2016,DailyPrice=213.80,Description="Siyah BMW temiz"},
-                new Car{CarId=4,BrandId=3,ColorId=3,ModelYear=2005,DailyPrice=150.0,Description="Beyaz Renault temiz"}
+                new Car{CarId=1,BrandId=1,ColorId=1,ModelYear=2008,DailyPrice=150.0m,Description="Kırmızı BMW temiz"},
+                new Car{CarId=2,BrandId=2,ColorId=1,ModelYear=2015,DailyPrice=200.0m,Description="Kırmızı Mercedes temiz"},
+                new Car{CarId=3,BrandId=1,ColorId=2,ModelYear=2016,DailyPrice=213.80m,Description="Siyah BMW temiz"},
+                new Car{CarId=4,BrandId=3,ColorId=3,ModelYear=2005,DailyPrice=150.0m,Description="Beyaz Renault temiz"}
 
             };
         }
@@ -36,9 +37,19 @@ namespace DataAccess.Concrete.InMemory
             Console.WriteLine(car.CarId + ": Araç silindi");
         }
 
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Car> GetAll()
         {
             return _cars;
+        }
+
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Car> GetById(int carId)

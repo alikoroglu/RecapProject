@@ -14,7 +14,7 @@ namespace ConsoleUI
                 CarId = 5,
                 BrandId = 3,
                 ColorId = 3,
-                DailyPrice = 130.0,
+                DailyPrice = 130.0m,
                 ModelYear = 2007,
                 Description = "Gri Tofaş Hasarlı"
 
